@@ -331,12 +331,12 @@ section.files{
   text-decoration: none;
 }
 .toast-close-button {
-  position: relative;
-  right: -0.3em;
-  top: -0.3em;
+  position:absolute;
+  right: 7px;
+  top: 2px;
   float: right;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 300;
   color: #ffffff;
   -webkit-text-shadow: 0 1px 0 #ffffff;
   text-shadow: 0 1px 0 #ffffff;
@@ -346,13 +346,7 @@ section.files{
 }
 .toast-close-button:hover,
 .toast-close-button:focus {
-  color: #000000;
-  text-decoration: none;
   cursor: pointer;
-  opacity: 0.4;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=40);
-  filter: alpha(opacity=40);
-
 }
 /*Additional properties for button version
  iOS requires the button element instead of an anchor tag.
@@ -430,12 +424,6 @@ button.toast-close-button {
 
 }
 #toast-container > :hover {
-  -moz-box-shadow: 0 0 12px #000000;
-  -webkit-box-shadow: 0 0 12px #000000;
-  box-shadow: 0 0 12px #000000;
-  opacity: 1;
-  -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
-  filter: alpha(opacity=100);
   cursor: pointer;
 }
 

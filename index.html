@@ -201,7 +201,11 @@
     <script src="libs/countdown.js"></script>
     <script src="libs/toastr.js"></script>
     <script>
+
         toastr.options.positionClass = "toast-bottom-right";
+        toastr.options.closeButton = true;
+        toastr.options.timeOut = 0;
+
         $('#timer').countdown("2016/07/21 10:00:00", function(event) {
             $('#timer').text(
                     event.strftime('%H:%M:%S')
@@ -222,7 +226,6 @@
             scrollTop();
         });
 
-
         function sendMail() {
             var email = $('#email').val();
             if(!validateEmail(email)) {
@@ -234,18 +237,15 @@
             });
         }
 
-
         function validateEmail(email) {
             var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
             return re.test(email);
         }
 
-
-
         function scrollTop() {
             $('html, body').animate({
                 scrollTop: 0
-            }, 300);
+            }, 500);
             $('#email').focus();
         }
 
