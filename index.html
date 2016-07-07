@@ -199,7 +199,9 @@
     <!-- Scripts JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="libs/countdown.js"></script>
+    <script src="libs/toastr.js"></script>
     <script>
+        toastr.options.positionClass = "toast-bottom-right";
         $('#timer').countdown("2016/07/21 10:00:00", function(event) {
             $('#timer').text(
                     event.strftime('%H:%M:%S')
@@ -220,11 +222,11 @@
         function sendMail() {
             var email = $('#email').val();
             if(!validateEmail(email)) {
-                alert('Merci de saisir une adresse valide');
+                return toastr.error('Merci de saisir une adresse valide');
             }
             $('#email').val('');
             $.post('/sendMail', { email: email }, function(data) {
-                return;
+                toastr.success('Votre demande a bien été enregistrée ! Vos accès seront envoyés par e-mail');
             });
         }
 

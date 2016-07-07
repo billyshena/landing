@@ -21,10 +21,8 @@ app.post('/sendMail', function(req, res) {
 	var client = new Mailin("https://api.sendinblue.com/v2.0", "A2IgtLBKMnQTUWhF", 1000);    //Optional parameter: Timeout in MS
 	var data = { "email" : email };
 
-	console.log('sending', data);
 	client.create_update_user(data).on('complete', function(data) {
 		res.sendStatus(200);
-		console.log('HERE');
 	}, function() {
 		console.log('error');
 	});
